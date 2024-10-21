@@ -85,6 +85,14 @@ function updateMaxXaXb() {
 function validateInput(input) {
   const value = parseFloat(input.value);
 
+  input.value = Number(value); // Usuwa pierwsze zera itp itd
+
+  // if (input.value.startsWith("0") && input.value.length > 1) {
+  // } else if (!Number.isInteger(value))
+  //   input.value = parseFloat(
+  //     value.toFixed(Math.min(2, (value.toString().split(".")[1] || "").length))
+  //   );
+
   if (isNaN(value) || value < 0) {
     input.value = 1; // Ustaw na 1, gdy wartość jest ujemna lub pusta
     updatePozycje();
